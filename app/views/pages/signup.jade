@@ -1,0 +1,25 @@
+doctype
+html
+    head
+        meta(charset="utf-8")
+        title #{title}
+        include ../includes/head
+    body
+    include ../includes/header
+
+block content
+  .container
+    .row
+        .col-md-7
+            form(method="POST",action="/user/signup")
+                .modal-header 注册
+                .modal-body
+                .form-group
+                    label(for="signupName") 用户名
+                    input#signupName.form-control(name="user[name]",type='text')
+                .form-group
+                    label(for="signupPassword") 密码
+                    input#signupPassword.form-control(name="user[password]",type='password')
+                .modal-footer
+                button.btn.btn-success(type="submit") 提交
+                button.btn.btn-default(type="button") 取消

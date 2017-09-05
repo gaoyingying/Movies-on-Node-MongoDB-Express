@@ -1,0 +1,33 @@
+extends ../layout
+
+block content
+  .container
+    .row
+
+        .panel.panel-default
+          .panel-heading
+            h4 #{name}
+          .panel-body
+            if cateMovies &&cateMovies.length>0
+              each item in cateMovies
+                .col-md-3
+                  .thumbnail
+                    a(href="/movie/#{item._id}")
+                      img(src="#{item.poster}", alt="#{item.title}" style="height:28rem")
+                    .caption
+                      h4 #{item.title}
+                      p: a.btn.btn-primary(href="/movie/#{item._id}", role="button") 点击观看
+        .col-sm-4.col-sm-offset-4.page
+        
+            ul.pagination
+                -for(var i=0;i<totalPage;i++){
+                    -if(currentPage==(i+1)){
+                        li.active 
+                            span #{currentPage}
+                    -}
+                    -else{
+                        li 
+                            a(href="/resultsByCategory?p=#{i}&#{cat}") #{i+1}
+                    -}
+                -}
+                

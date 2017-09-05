@@ -1,0 +1,16 @@
+{
+  "name": "movie",
+  "description": "this is a test",
+  "main": "",
+  "authors": [
+    "gaoyingying <771509430@qq.com>"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
